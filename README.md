@@ -1,1 +1,220 @@
-# arduino_stepper_controller
+#arduino_stepper_controller
+
+Authors:
+
+    Peter Polidoro <polidorop@janelia.hhmi.org>
+
+License:
+
+    BSD
+
+##More Detailed Help on Installation and Usage
+
+[modular-devices](https://github.com/janelia-modular-devices/modular-devices)
+
+##Device Information
+
+```json
+{
+  "id":"?",
+  "result":{
+    "device_info":{
+      "name":"stepper_controller",
+      "model_number":1140,
+      "serial_number":0,
+      "firmware_version":{
+        "major":0,
+        "minor":1,
+        "patch":0
+      }
+    },
+    "methods":[
+      "getMemoryFree",
+      "resetDefaults",
+      "setSerialNumber",
+      "enable",
+      "disable",
+      "stop",
+      "getControllerInfo",
+      "move",
+      "playTone",
+      "setToneFrequency",
+      "setToneDuration",
+      "setPlayToneBeforeMove",
+      "setWaypointCount",
+      "setWaypointTravelDuration",
+      "setWaypointRepeat",
+      "setWaypointRepeatPeriod"
+    ]
+  }
+}
+```
+
+##Verbose Device Information
+
+```json
+{
+  "id":"??",
+  "result":{
+    "device_info":{
+      "name":"stepper_controller",
+      "model_number":1140,
+      "serial_number":0,
+      "firmware_version":{
+        "major":0,
+        "minor":1,
+        "patch":0
+      }
+    },
+    "methods":[
+      {
+        "name":"getMemoryFree",
+        "parameters":[],
+        "result_type":"long"
+      },
+      {
+        "name":"resetDefaults",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"setSerialNumber",
+        "parameters":[
+          "serial_number"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"enable",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"disable",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"stop",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"getControllerInfo",
+        "parameters":[],
+        "result_type":"object"
+      },
+      {
+        "name":"move",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"playTone",
+        "parameters":[],
+        "result_type":null
+      },
+      {
+        "name":"setToneFrequency",
+        "parameters":[
+          "tone_frequency"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setToneDuration",
+        "parameters":[
+          "tone_duration"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setPlayToneBeforeMove",
+        "parameters":[
+          "play_tone_before_move"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setWaypointCount",
+        "parameters":[
+          "waypoint_count"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setWaypointTravelDuration",
+        "parameters":[
+          "waypoint_travel_duration"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setWaypointRepeat",
+        "parameters":[
+          "waypoint_repeat"
+        ],
+        "result_type":null
+      },
+      {
+        "name":"setWaypointRepeatPeriod",
+        "parameters":[
+          "waypoint_repeat_period"
+        ],
+        "result_type":null
+      }
+    ],
+    "parameters":[
+      {
+        "name":"serial_number",
+        "type":"long",
+        "min":0,
+        "max":65535
+      },
+      {
+        "name":"waypoint_count",
+        "type":"long",
+        "min":1,
+        "max":255
+      },
+      {
+        "name":"waypoint_travel_duration",
+        "units":"ms",
+        "type":"long",
+        "min":100,
+        "max":10000
+      },
+      {
+        "name":"tone_frequency",
+        "units":"Hz",
+        "type":"long",
+        "min":850,
+        "max":20000
+      },
+      {
+        "name":"tone_duration",
+        "units":"ms",
+        "type":"long",
+        "min":1,
+        "max":10000
+      },
+      {
+        "name":"play_tone_before_move",
+        "type":"bool"
+      },
+      {
+        "name":"waypoint_repeat",
+        "type":"bool"
+      },
+      {
+        "name":"waypoint_repeat_period",
+        "units":"ms",
+        "type":"long",
+        "min":100,
+        "max":10000
+      }
+    ]
+  }
+}
+```
+
