@@ -10,23 +10,23 @@
 
 namespace constants
 {
-const int baudrate = 9600;
+const size_t baudrate = 9600;
 
-const int model_number = 1140;
+const size_t model_number = 1140;
 
 // Use semantic versioning http://semver.org/
-const unsigned char firmware_major = 0;
-const unsigned char firmware_minor = 1;
-const unsigned char firmware_patch = 0;
+const long firmware_major = 0;
+const long firmware_minor = 1;
+const long firmware_patch = 0;
 
-const int speaker_pin = 46;
-const int drive_enable_pin = 49;
-const int step_pins[MOTOR_COUNT] = {53};
-const int dir_pins[MOTOR_COUNT] = {51};
-const int motion_switch_interrupt_pin = 2;
-const int sound_switch_interrupt_pin = 3;
-const int motion_bnc_interrupt_pin = 21;
-const int sound_bnc_interrupt_pin = 20;
+const size_t speaker_pin = 46;
+const size_t drive_enable_pin = 49;
+const size_t step_pins[MOTOR_COUNT] = {53};
+const size_t dir_pins[MOTOR_COUNT] = {51};
+const size_t motion_switch_interrupt_pin = 2;
+const size_t sound_switch_interrupt_pin = 3;
+const size_t motion_bnc_interrupt_pin = 21;
+const size_t sound_bnc_interrupt_pin = 20;
 
 const ModeType mode_default = WAYPOINT;
 
