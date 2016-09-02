@@ -115,10 +115,10 @@ void Stepper::goToNextWaypoint()
 {
   if (!isRunning())
   {
-    int waypoint_count;
-    globals::modular_server.getSavedVariableValue(constants::waypoint_count_parameter_name,waypoint_count);
-    int micro_steps_per_step;
-    globals::modular_server.getSavedVariableValue(constants::micro_steps_per_step_parameter_name,micro_steps_per_step);
+    long waypoint_count;
+    globals::modular_server.getFieldValue(constants::waypoint_count_field_name,waypoint_count);
+    long micro_steps_per_step;
+    globals::modular_server.getFieldValue(constants::micro_steps_per_step_field_name,micro_steps_per_step);
     long next_waypoint_pos = (long(waypoint_ + 1)*constants::steps_per_rev*micro_steps_per_step)/long(waypoint_count);
     setTargetPosition(next_waypoint_pos);
     start();

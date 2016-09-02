@@ -11,6 +11,7 @@
 #include "ModularServer.h"
 #include "Constants.h"
 #include "Controller.h"
+#include "Globals.h"
 
 
 namespace callbacks
@@ -27,19 +28,10 @@ void moveCallback();
 
 void playToneCallback();
 
-void setToneFrequencyCallback();
-
-void setToneDurationCallback();
-
+// Set Field Callbacks
 void setWaypointCountCallback();
 
 void setWaypointTravelDurationCallback();
-
-void setPlayToneBeforeMoveCallback();
-
-void setWaypointRepeatCallback();
-
-void setWaypointRepeatPeriodCallback();
 
 // EventController Callbacks
 void waypointRepeatCallback(int index);

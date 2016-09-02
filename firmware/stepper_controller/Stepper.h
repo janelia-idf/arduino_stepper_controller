@@ -13,8 +13,8 @@
 #include <WProgram.h>
 #include <wiring.h>
 #endif
-#include "Globals.h"
 #include "Constants.h"
+#include "Globals.h"
 
 
 class Stepper
@@ -130,13 +130,14 @@ inline void Stepper::setStepPinLow()
     if (current_pos_ == target_pos_)
     {
       running_ = false;
-      constants::ModeType mode;
-      globals::modular_server.getSavedVariableValue(constants::mode_name,mode);
-      if (mode == constants::WAYPOINT)
+      // constants::ModeType mode;
+      // globals::modular_server.getSavedVariableValue(constants::mode_name,mode);
+      // if (mode == constants::WAYPOINT)
+      if (true)
       {
         waypoint_++;
-        int waypoint_count;
-        globals::modular_server.getSavedVariableValue(constants::waypoint_count_parameter_name,waypoint_count);
+        long waypoint_count;
+        globals::modular_server.getFieldValue(constants::waypoint_count_field_name,waypoint_count);
         if (waypoint_ == waypoint_count)
         {
           waypoint_ = 0;

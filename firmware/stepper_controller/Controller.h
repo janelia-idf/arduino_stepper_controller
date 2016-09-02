@@ -11,9 +11,9 @@
 #include "EventController.h"
 #include "BetterMap.h"
 #include "TimerOne.h"
-#include "Globals.h"
 #include "Constants.h"
 #include "Callbacks.h"
+#include "Globals.h"
 #include "MotorDrive.h"
 
 
@@ -36,12 +36,12 @@ public:
   Array<long,constants::MOTOR_COUNT> getTargetPosition();
   void playTone();
   void goToNextWaypoint();
-  void setWaypointCount(int waypoint_count);
-  void setWaypointTravelDuration(int waypoint_travel_duration);
+  void setWaypointCount();
+  void setWaypointTravelDuration();
   void startWaypointRepeat();
   void stopWaypointRepeat();
 private:
-  SavedVariable saved_variables_[constants::SAVED_VARIABLE_COUNT_MAX];
+  ModularDevice::Field fields_[constants::FIELD_COUNT_MAX];
   ModularDevice::Parameter parameters_[constants::PARAMETER_COUNT_MAX];
   ModularDevice::Method methods_[constants::METHOD_COUNT_MAX];
 

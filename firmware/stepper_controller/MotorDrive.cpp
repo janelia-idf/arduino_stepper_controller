@@ -36,18 +36,32 @@ void MotorDrive::enable()
 {
   setSpeed();
 
-  uint8_t enable_polarity;
-  globals::modular_server.getSavedVariableValue(constants::enable_polarity_name,enable_polarity);
-  digitalWrite(enable_pin_,enable_polarity);
+  bool enable_polarity_high;
+  globals::modular_server.getFieldValue(constants::enable_polarity_high_field_name,enable_polarity_high);
+  if (enable_polarity_high)
+  {
+    digitalWrite(enable_pin_,HIGH);
+  }
+  else
+  {
+    digitalWrite(enable_pin_,LOW);
+  }
   enabled_flag_ = true;
 }
 
 void MotorDrive::disable()
 {
   enabled_flag_ = false;
-  uint8_t enable_polarity;
-  globals::modular_server.getSavedVariableValue(constants::enable_polarity_name,enable_polarity);
-  digitalWrite(enable_pin_,(HIGH ^ enable_polarity));
+  bool enable_polarity_high;
+  globals::modular_server.getFieldValue(constants::enable_polarity_high_field_name,enable_polarity_high);
+  if (enable_polarity_high)
+  {
+    digitalWrite(enable_pin_,LOW);
+  }
+  else
+  {
+    digitalWrite(enable_pin_,HIGH);
+  }
   stopAll();
 }
 
@@ -264,16 +278,17 @@ Array<int, constants::MOTOR_COUNT> MotorDrive::getCurrentWaypointAll()
 
 void MotorDrive::setSpeed()
 {
-  constants::ModeType mode;
-  globals::modular_server.getSavedVariableValue(constants::mode_name,mode);
-  if (mode == constants::WAYPOINT)
+  // constants::ModeType mode;
+  // globals::globals::modular_server.getSavedVariableValue(constants::mode_name,mode);
+  // if (mode == constants::WAYPOINT)
+  if (true)
   {
-    int waypoint_travel_duration;
-    globals::modular_server.getSavedVariableValue(constants::waypoint_travel_duration_parameter_name,waypoint_travel_duration);
-    int micro_steps_per_step;
-    globals::modular_server.getSavedVariableValue(constants::micro_steps_per_step_parameter_name,micro_steps_per_step);
-    int waypoint_count;
-    globals::modular_server.getSavedVariableValue(constants::waypoint_count_parameter_name,waypoint_count);
+    long waypoint_travel_duration;
+    globals::modular_server.getFieldValue(constants::waypoint_travel_duration_field_name,waypoint_travel_duration);
+    long micro_steps_per_step;
+    globals::modular_server.getFieldValue(constants::micro_steps_per_step_field_name,micro_steps_per_step);
+    long waypoint_count;
+    globals::modular_server.getFieldValue(constants::waypoint_count_field_name,waypoint_count);
     long timer_period = ((long)waypoint_travel_duration*waypoint_count*1000)/(constants::steps_per_rev*long(micro_steps_per_step));
     Timer1.setPeriod(timer_period);
   }

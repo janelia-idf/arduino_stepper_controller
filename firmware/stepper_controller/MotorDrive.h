@@ -13,9 +13,9 @@
 #include "WProgram.h"
 #endif
 #include "TimerOne.h"
+#include "Globals.h"
 #include "Stepper.h"
 #include "Array.h"
-#include "Globals.h"
 #include "Constants.h"
 
 
