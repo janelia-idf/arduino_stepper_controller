@@ -135,10 +135,19 @@ inline void Stepper::setStepPinLow()
       // if (mode == constants::WAYPOINT)
       if (true)
       {
-        waypoint_++;
+        bool reverse_direction;
+        globals::modular_server.getFieldValue(constants::reverse_direction_field_name,reverse_direction);
+        if (!reverse_direction)
+        {
+          waypoint_++;
+        }
+        else
+        {
+          waypoint_--;
+        }
         long waypoint_count;
         globals::modular_server.getFieldValue(constants::waypoint_count_field_name,waypoint_count);
-        if (waypoint_ == waypoint_count)
+        if (abs(waypoint_) == waypoint_count)
         {
           waypoint_ = 0;
           setCurrentPosition(0);

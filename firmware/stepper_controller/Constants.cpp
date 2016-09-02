@@ -64,7 +64,10 @@ const long waypoint_count_default = 30;
 CONSTANT_STRING(waypoint_travel_duration_field_name,"waypoint_travel_duration");
 const long waypoint_travel_duration_min = 100;
 const long waypoint_travel_duration_max = 10000;
-const long waypoint_travel_duration_default = 400;
+const long waypoint_travel_duration_default = 200;
+
+CONSTANT_STRING(reverse_direction_field_name,"reverse_direction");
+const bool reverse_direction_default = false;
 
 CONSTANT_STRING(enable_polarity_high_field_name,"enable_polarity_high");
 const bool enable_polarity_high_default = true;

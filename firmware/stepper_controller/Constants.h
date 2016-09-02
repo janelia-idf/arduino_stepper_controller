@@ -13,7 +13,7 @@
 namespace constants
 {
 //MAX values must be >= 1, >= created/copied count, < RAM limit
-enum{FIELD_COUNT_MAX=10};
+enum{FIELD_COUNT_MAX=11};
 enum{PARAMETER_COUNT_MAX=1};
 enum{METHOD_COUNT_MAX=6};
 
@@ -75,6 +75,9 @@ extern ConstantString waypoint_travel_duration_field_name;
 extern const long waypoint_travel_duration_min;
 extern const long waypoint_travel_duration_max;
 extern const long waypoint_travel_duration_default;
+
+extern ConstantString reverse_direction_field_name;
+extern const bool reverse_direction_default;
 
 extern ConstantString enable_polarity_high_field_name;
 extern const bool enable_polarity_high_default;

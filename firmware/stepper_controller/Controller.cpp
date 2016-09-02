@@ -50,6 +50,8 @@ void Controller::setup()
   waypoint_travel_duration_field.setUnits(constants::duration_parameter_units);
   waypoint_travel_duration_field.attachSetValueCallback(callbacks::setWaypointTravelDurationCallback);
 
+  ModularDevice::Field& reverse_direction_field = globals::modular_server.createField(constants::reverse_direction_field_name,constants::reverse_direction_default);
+
   ModularDevice::Field& enable_polarity_high_field = globals::modular_server.createField(constants::enable_polarity_high_field_name,constants::enable_polarity_high_default);
 
   ModularDevice::Field& tone_frequency_field = globals::modular_server.createField(constants::tone_frequency_field_name,constants::tone_frequency_default);
