@@ -1,0 +1,6 @@
+[submodule "firmware/StepDirControllerSimple"]
+	path = firmware/StepDirControllerSimple
+	url = https://github.com/janelia-arduino/StepDirControllerSimple.git
+[submodule "firmware/RotaryPelletControllerSimple"]
+	path = firmware/RotaryPelletControllerSimple
+	url = https://github.com/janelia-arduino/RotaryPelletControllerSimple.git
