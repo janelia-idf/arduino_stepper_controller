@@ -4,3 +4,6 @@
 [submodule "firmware/RotaryPelletControllerSimple"]
 	path = firmware/RotaryPelletControllerSimple
 	url = https://github.com/janelia-arduino/RotaryPelletControllerSimple.git
+[submodule "firmware/RotaryDiskControllerSimple"]
+	path = firmware/RotaryDiskControllerSimple
+	url = https://github.com/janelia-arduino/RotaryDiskControllerSimple.git
